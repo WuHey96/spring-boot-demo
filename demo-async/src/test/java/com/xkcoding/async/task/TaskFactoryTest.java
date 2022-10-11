@@ -32,7 +32,7 @@ public class TaskFactoryTest extends SpringBootDemoAsyncApplicationTests {
         Future<Boolean> asyncTask3 = task.asyncTask3();
 
         // 调用 get() 阻塞主线程
-        asyncTask1.get();
+        asyncTask1.get(); //asyncTask1 如果没有执行完成 主线程就无法结束
         asyncTask2.get();
         asyncTask3.get();
         long end = System.currentTimeMillis();
